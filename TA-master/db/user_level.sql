@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 10 Des 2021 pada 15.30
+-- Waktu pembuatan: 11 Des 2021 pada 07.44
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.0.13
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `user_level`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `admin_juri`
+--
+
+CREATE TABLE `admin_juri` (
+  `id_admin_juri` int(10) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `level` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `admin_juri`
+--
+
+INSERT INTO `admin_juri` (`id_admin_juri`, `username`, `nama`, `email`, `password`, `level`) VALUES
+(1, 'admin_satu', 'adminnn', 'admin1@gmail.com', '12345', 'admin'),
+(2, 'admin_dua', 'admin_dua', 'admin2@gmail.com', '12345', 'admin'),
+(3, 'juri_satu', 'juriii', 'juri1@gmail.com', '12345', 'juri'),
+(4, 'juri_dua', 'jurii', 'juri2@gmail.com', '12345', 'juri');
 
 -- --------------------------------------------------------
 
@@ -46,7 +71,9 @@ CREATE TABLE `karya` (
 --
 
 INSERT INTO `karya` (`id_karya`, `nama_peserta`, `judul`, `deskripsi`, `nama`, `ukuran`, `tipe`, `tanggal`, `nilai`, `nilai_2`, `tanggal_ditanggapi`) VALUES
-(9, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', '1.png', '21795', 'image/png', '2021-12-10 13:20:15', '90', '98', '2021-12-10 13:28:10');
+(9, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', '1.png', '21795', 'image/png', '2021-12-10 13:20:15', '90', '98', '2021-12-10 13:28:10'),
+(11, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', '1.jpg', '14260', 'image/jpeg', '2021-12-11 05:48:18', '', '', '2021-12-11 05:48:18'),
+(12, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', '3.png', '101036', 'image/png', '2021-12-11 06:40:20', '', '', '2021-12-11 06:40:20');
 
 -- --------------------------------------------------------
 
@@ -76,8 +103,9 @@ INSERT INTO `konten` (`id_konten`, `judul_konten`, `isi_konten`) VALUES
 
 CREATE TABLE `user` (
   `id` int(10) NOT NULL,
-  `nama` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `level` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -86,14 +114,19 @@ CREATE TABLE `user` (
 -- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`) VALUES
-(1, 'Rafli', 'Admin', '12345', 'admin'),
-(5, 'Rafli', '2003018', '12345', 'peserta'),
-(6, 'Tigin', '2003019', '12345', 'juri');
+INSERT INTO `user` (`id`, `username`, `nama`, `email`, `password`, `level`) VALUES
+(7, '2003018', 'Muhamad Rafli Septian', 'rafliseptiannn25@gmail.com', '$2y$10$BvZb0vM1Mau1YgvQwL7KXeYcMsLWGRRD0Ko6gRQWV6jkcNgmpS3KC', 'peserta'),
+(8, '2002018', 'Qolbu', 'aksara@gmail.com', '$2y$10$Cvqh0aNzEy5CQHAnQOEp5eltHaWZY/HXii5bWiZJQYi6hYF4LnONq', 'peserta');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `admin_juri`
+--
+ALTER TABLE `admin_juri`
+  ADD PRIMARY KEY (`id_admin_juri`);
 
 --
 -- Indeks untuk tabel `karya`
@@ -118,22 +151,28 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `admin_juri`
+--
+ALTER TABLE `admin_juri`
+  MODIFY `id_admin_juri` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT untuk tabel `karya`
 --
 ALTER TABLE `karya`
-  MODIFY `id_karya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_karya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `konten`
 --
 ALTER TABLE `konten`
-  MODIFY `id_konten` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_konten` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

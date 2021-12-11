@@ -21,7 +21,7 @@ include('includes/navbar.php');
 
                 <?php
                 $connection = mysqli_connect("localhost", "root", "", "user_level");
-                $query = "SELECT *FROM user WHERE level = 'pegawai' ";
+                $query = "SELECT *FROM admin_juri WHERE level = 'juri' ";
                 $query_run = mysqli_query($connection, $query);
                 ?>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
