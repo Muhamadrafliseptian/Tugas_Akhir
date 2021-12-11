@@ -1,4 +1,5 @@
 <?php 
+$koneksi = mysqli_connect("localhost","root","","user_level");
 $con = mysqli_connect("localhost","root","","user_level");
  
 // Check connection

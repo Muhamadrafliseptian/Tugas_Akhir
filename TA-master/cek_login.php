@@ -11,7 +11,7 @@ $password = $_POST['password'];
  
  
 // menyeleksi data user dengan username dan password yang sesuai
-$login = mysqli_query($con,"select * from user where username='$username'");
+$login = mysqli_query($koneksi,"select * from user where username='$username'");
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($login);
  
@@ -20,9 +20,27 @@ if($cek > 0){
  
 	$data = mysqli_fetch_assoc($login);
 	if( password_verify($password, $data['password']) ) {
-		
-		
-		if($data['level']=="peserta"){
+
+ 
+		// cek jika user login sebagai admin
+		if($data['level']=="admin"){
+	
+			// buat session login dan username
+			$_SESSION['username'] = $username;
+			$_SESSION['level'] = "admin";
+			// alihkan ke halaman dashboard admin
+			header("location:admin/index.php");
+	
+		// cek jika user login sebagai pegawai
+		}else if($data['level']=="juri"){
+			// buat session login dan username
+			$_SESSION['username'] = $username;
+			$_SESSION['level'] = "juri";
+			// alihkan ke halaman dashboard pegawai
+			header("location:juri/index.php");
+	
+		// cek jika user login sebagai pengurus
+		}else if($data['level']=="peserta"){
 			// buat session login dan username
 			$_SESSION['username'] = $username;
 			$_SESSION['level'] = "peserta";

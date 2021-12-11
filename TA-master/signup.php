@@ -20,7 +20,7 @@ if( isset($_POST['submit']) ){
         $password = mysqli_real_escape_string($con, $password);
         $repass   = stripslashes($_POST['repassword']);
         $repass   = mysqli_real_escape_string($con, $repass);
-        $level    = "peserta";
+        $level    = "juri";
         //cek apakah nilai yang diinputkan pada form ada yang kosong atau tidak
         if(!empty(trim($name)) && !empty(trim($username)) && !empty(trim($email)) && !empty(trim($password)) && !empty(trim($repass))){
             //mengecek apakah password yang diinputkan sama dengan re-password yang diinputkan kembali

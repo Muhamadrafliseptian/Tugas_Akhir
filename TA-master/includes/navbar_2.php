@@ -77,7 +77,7 @@
                 aria-labelledby="navbarDarkDropdownMenuLink"
               >
                 <li><a class="dropdown-item" href="nilai_user.php">Nilai</a></li>
-                <li><a class="dropdown-item" href="#">Juara</a></li>
+                <li><a class="dropdown-item" href="juara.php">Foto Karya Peserta</a></li>
                 <li><a class="dropdown-item" href="#">Sertifikat</a>
                 </li>
               </ul>

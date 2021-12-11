@@ -1,8 +1,5 @@
-
-
 <body>
-  
-  <?php 
+   <?php 
   include ('includes/navbar_2.php');
   ?>
   
@@ -14,10 +11,10 @@
     <div class="container">
     <div class="card text-start" style="width: 36rem;">
   <div class="card-body">
-    <<form method="post" enctype="multipart/form-data" action="upload.php">
+    <form method="post" enctype="multipart/form-data" action="upload.php">
       <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Nama</label>
-    <input type="text" class="form-control" value="" name="nama_peserta" id="" aria-describedby="emailHelp">
+    <label for="exampleInputEmail1" class="form-label">Nama</label> 
+    <input type="text" class="form-control" value="" name="nama_peserta" >
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Judul</label>
@@ -32,7 +29,9 @@
     <input type="file" class="form-control" value="" name="gambar" id="">
   </div>
   <button type="submit" name="" class="btn btn-primary">Submit</button>
-</>
+  </div>
+    </div>
+    </div>
   </div>
 </div>
 <br>

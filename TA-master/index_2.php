@@ -46,11 +46,10 @@
                         <input type="password" class="form-control" id="InputPassword" name="password" placeholder="Password">
                     </div>
                     <br>
-                    <button type="button" href="index.php" class="btn btn-secondary btn-block">Kembali</button>
+                    <a  href="index.php" class="btn btn-secondary">Kembali</a>
                     <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
                     <div class="form-footer mt-2">
                         <p> Belum punya account? <a href="signup.php">sign-up</a></p>
-                        <p> login admin dan juri <a href="index_3.php">di sini</a></p>
                     </div>
                     </div>
                     </div>

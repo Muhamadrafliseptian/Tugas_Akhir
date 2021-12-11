@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Des 2021 pada 08.03
+-- Waktu pembuatan: 11 Des 2021 pada 13.35
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.0.13
 
@@ -20,31 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `user_level`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `admin_juri`
---
-
-CREATE TABLE `admin_juri` (
-  `id_admin_juri` int(10) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `level` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `admin_juri`
---
-
-INSERT INTO `admin_juri` (`id_admin_juri`, `username`, `nama`, `email`, `password`, `level`) VALUES
-(1, 'admin_satu', 'adminnn', 'admin1@gmail.com', '12345', 'admin'),
-(2, 'admin_dua', 'admin_dua', 'admin2@gmail.com', '12345', 'admin'),
-(3, 'juri_satu', 'juriii', 'juri1@gmail.com', '12345', 'juri'),
-(4, 'juri_dua', 'jurii', 'juri2@gmail.com', '12345', 'juri');
 
 -- --------------------------------------------------------
 
@@ -71,7 +46,11 @@ CREATE TABLE `karya` (
 --
 
 INSERT INTO `karya` (`id_karya`, `nama_peserta`, `judul`, `deskripsi`, `nama`, `ukuran`, `tipe`, `tanggal`, `nilai`, `nilai_2`, `tanggal_ditanggapi`) VALUES
-(17, 'Muhamad Qolbu', 'Lomba Fotografi', 'ini deskripsi', 'testkarya.png', '67495', 'image/png', '2021-12-11 06:58:47', '99', '88', '2021-12-11 06:59:39');
+(17, 'Muhamad Qolbu', 'Lomba Fotografi', 'ini deskripsi', 'testkarya.png', '67495', 'image/png', '2021-12-11 06:58:47', '99', '88', '2021-12-11 06:59:39'),
+(18, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', 'seminar.png', '745741', 'image/png', '2021-12-11 11:06:26', '80', '96', '2021-12-11 11:20:40'),
+(19, 'Muhamad Rafli Septian', 'seminar', 'test_karya', '1.jpg', '14260', 'image/jpeg', '2021-12-11 11:43:01', '90', '89', '2021-12-11 11:45:18'),
+(20, 'Andra', 'sekolah', 'bagus', '2.jpg', '6484', 'image/jpeg', '2021-12-11 12:01:02', '80', '86', '2021-12-11 12:03:49'),
+(21, 'rafli', 'bango', 'Foto Bagus', '1.png', '21795', 'image/png', '2021-12-11 12:18:38', '86', '86', '2021-12-11 12:25:05');
 
 -- --------------------------------------------------------
 
@@ -96,6 +75,19 @@ INSERT INTO `konten` (`id_konten`, `judul_konten`, `isi_konten`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `nilai`
+--
+
+CREATE TABLE `nilai` (
+  `id_nilai` int(10) NOT NULL,
+  `nilai` varchar(255) NOT NULL,
+  `nilai_2` varchar(255) NOT NULL,
+  `tanggal_ditanggapi` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `user`
 --
 
@@ -113,20 +105,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `nama`, `email`, `password`, `level`) VALUES
-(7, '2003018', 'Muhamad Rafli Septian', 'rafliseptiannn25@gmail.com', '$2y$10$BvZb0vM1Mau1YgvQwL7KXeYcMsLWGRRD0Ko6gRQWV6jkcNgmpS3KC', 'peserta'),
-(8, '2002018', 'Qolbu', 'aksara@gmail.com', '$2y$10$Cvqh0aNzEy5CQHAnQOEp5eltHaWZY/HXii5bWiZJQYi6hYF4LnONq', 'peserta'),
-(9, '2003015', 'Asoy', 'tegargebleg@gmail.com', '$2y$10$aECvFfuFFlLo1J0iTGKs/OglovWOEkzN5GqY.F/.pQPuZRZT/5tWe', 'peserta'),
-(10, '2003001', 'Abad', 'abad@gmail.com', '$2y$10$A4gRHp4JCFDVhG8seVACFeIQnxL2m2e3f72kV9kOUYZBdahWCdPMy', 'peserta');
+(25, '2003001', 'Messi', 'messi@gmail.com', '$2y$10$k5D6bO9vFFQThL1.Jw47EuDD07Y3RElYytstGBvUYy0hVjfIfHPJ6', 'peserta'),
+(26, '2003002', 'ronaldo', 'ronaldo@gmail.com', '$2y$10$iVEjaBCwOxyIij3aN3Nb/egolT1nrhlJGyaZuz5DFYPf9lnlhX3z6', 'admin'),
+(27, '2003003', 'neymar', 'neymar@gmail.com', '$2y$10$1V7tcqeWlU4B8stHXC/UX.AiyTTG70Uq1oK0JDs2YOfriUqDQLXvW', 'juri'),
+(28, '2003004', 'naruto', 'naruto@gmail.com', '$2y$10$lK9ckiavVswZte6HYmqGceWVjgGAUk8jY6dm8Af0OuHS6iCtkvz.W', 'juri');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indeks untuk tabel `admin_juri`
---
-ALTER TABLE `admin_juri`
-  ADD PRIMARY KEY (`id_admin_juri`);
 
 --
 -- Indeks untuk tabel `karya`
@@ -141,6 +127,12 @@ ALTER TABLE `konten`
   ADD PRIMARY KEY (`id_konten`);
 
 --
+-- Indeks untuk tabel `nilai`
+--
+ALTER TABLE `nilai`
+  ADD PRIMARY KEY (`id_nilai`);
+
+--
 -- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
@@ -151,16 +143,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin_juri`
---
-ALTER TABLE `admin_juri`
-  MODIFY `id_admin_juri` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT untuk tabel `karya`
 --
 ALTER TABLE `karya`
-  MODIFY `id_karya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_karya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `konten`
@@ -169,10 +155,16 @@ ALTER TABLE `konten`
   MODIFY `id_konten` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT untuk tabel `nilai`
+--
+ALTER TABLE `nilai`
+  MODIFY `id_nilai` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
