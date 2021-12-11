@@ -34,7 +34,7 @@
             <section class="col-12 col-sm-6 col-md-4 mx-auto">
             <div class="card text-start" style="width: 28rem;">
             <div class="card-body">
-                <form class="form-container" action="cek_login.php" method="POST">
+                <form class="form-container" action="cek_admin.php" method="POST">
                     <h4 class="text-center font-weight-bold"> Sign-In </h4>
                     
                     <div class="form-group">
@@ -46,12 +46,8 @@
                         <input type="password" class="form-control" id="InputPassword" name="password" placeholder="Password">
                     </div>
                     <br>
-                    <button type="button" href="index.php" class="btn btn-secondary btn-block">Kembali</button>
+                    <a href="index.php" class="btn btn-secondary btn-block">Kembali</a>
                     <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
-                    <div class="form-footer mt-2">
-                        <p> Belum punya account? <a href="signup.php">sign-up</a></p>
-                        <p> login admin dan juri <a href="index_3.php">di sini</a></p>
-                    </div>
                     </div>
                     </div>
                 </form>

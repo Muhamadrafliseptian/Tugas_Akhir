@@ -27,7 +27,7 @@
                                 <tr>
 
                                     <td><?php echo $no; ?></td>
-                                    <td ><?php echo $row['nama']; ?></td>
+                                    <td ><?php echo $row['nama_peserta']; ?></td>
                                     <td ><?php echo $row['nilai']; ?></td>
                                     <td ><?php echo $row['nilai_2']; ?></td>
 

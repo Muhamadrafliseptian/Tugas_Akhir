@@ -23,7 +23,7 @@ if($tipe_file == "image/jpeg" || $tipe_file == "image/png"){ // Cek apakah tipe 
 			// Jika gambar berhasil diupload, Lakukan :	
 			// Proses simpan ke Database
 			$query = "INSERT INTO karya (nama_peserta,judul,deskripsi,nama,ukuran,tipe) VALUES('".$nama_peserta."','".$judul."','".$deskripsi."','".$nama_file."','".$ukuran_file."','".$tipe_file."')";
-			$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
+			$sql = mysqli_query($con, $query); // Eksekusi/ Jalankan query dari variabel $query
 			
 			if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 				// Jika Sukses, Lakukan :

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Des 2021 pada 16.40
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 8.0.10
+-- Waktu pembuatan: 10 Des 2021 pada 15.30
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,11 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `karya` (
   `id_karya` int(10) NOT NULL,
-  `nama` varchar(255) NOT NULL,
+  `nama_peserta` varchar(255) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `deskripsi` varchar(255) NOT NULL,
-  `hasil` varchar(255) NOT NULL,
-  `tanggal` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `nama` varchar(255) NOT NULL,
+  `ukuran` varchar(255) NOT NULL,
+  `tipe` varchar(255) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
   `nilai` varchar(255) NOT NULL,
   `nilai_2` varchar(255) NOT NULL,
   `tanggal_ditanggapi` timestamp NOT NULL DEFAULT current_timestamp()
@@ -43,10 +45,8 @@ CREATE TABLE `karya` (
 -- Dumping data untuk tabel `karya`
 --
 
-INSERT INTO `karya` (`id_karya`, `nama`, `judul`, `deskripsi`, `hasil`, `tanggal`, `nilai`, `nilai_2`, `tanggal_ditanggapi`) VALUES
-(1, 'Muhamad Rafli', '', '', 'Saloh.jpg', '2021-12-08 05:51:02', '90', '80', '2021-12-08 05:51:02'),
-(4, 'rafli', 'bango', '2', '', '2021-12-08 11:48:16', '', '', '2021-12-08 11:48:16'),
-(5, 'Muhamad Rafli Septian', 'bango', 'kjwjwjw', '', '2021-12-08 11:49:43', '80', '98', '2021-12-08 11:49:43');
+INSERT INTO `karya` (`id_karya`, `nama_peserta`, `judul`, `deskripsi`, `nama`, `ukuran`, `tipe`, `tanggal`, `nilai`, `nilai_2`, `tanggal_ditanggapi`) VALUES
+(9, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', '1.png', '21795', 'image/png', '2021-12-10 13:20:15', '90', '98', '2021-12-10 13:28:10');
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,8 @@ CREATE TABLE `konten` (
 --
 
 INSERT INTO `konten` (`id_konten`, `judul_konten`, `isi_konten`) VALUES
-(2, 'halo', 'halo@gmail.com');
+(5, 'Kebakaran', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius sed magnam nisi tempora aut officia culpa, mollitia nesciunt! Ratione recusandae dolor delectus dicta odio. Saepe esse quaerat nam perferendis quas!'),
+(6, 'Kecelelakaan', 'lOREM IPSUMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM');
 
 -- --------------------------------------------------------
 
@@ -87,9 +88,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `level`) VALUES
 (1, 'Rafli', 'Admin', '12345', 'admin'),
-(2, 'Gunawan', 'Juri', '12345', 'Pegawai'),
-(3, 'Faiq', 'Faiq_3', '12345', 'pengurus'),
-(4, 'Bolang', 'Gunawan', '12345', 'Pegawai');
+(5, 'Rafli', '2003018', '12345', 'peserta'),
+(6, 'Tigin', '2003019', '12345', 'juri');
 
 --
 -- Indexes for dumped tables
@@ -121,19 +121,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `karya`
 --
 ALTER TABLE `karya`
-  MODIFY `id_karya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_karya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `konten`
 --
 ALTER TABLE `konten`
-  MODIFY `id_konten` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_konten` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

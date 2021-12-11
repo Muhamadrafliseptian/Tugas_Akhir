@@ -5,7 +5,7 @@ $conn = mysqli_connect("localhost", "root", "", "user_level");
 $count1 = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM karya"));
 
 $conn = mysqli_connect("localhost", "root", "", "user_level");
-$count2 = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM user WHERE level = 'admin'"));
+$count2 = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM admin_juri  WHERE level = 'admin'"));
 
 $conn = mysqli_connect("localhost", "root", "", "user_level");
 $count3 = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM karya"));
