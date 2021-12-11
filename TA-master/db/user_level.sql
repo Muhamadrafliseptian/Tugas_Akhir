@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Des 2021 pada 07.44
+-- Waktu pembuatan: 11 Des 2021 pada 08.03
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.0.13
 
@@ -71,9 +71,7 @@ CREATE TABLE `karya` (
 --
 
 INSERT INTO `karya` (`id_karya`, `nama_peserta`, `judul`, `deskripsi`, `nama`, `ukuran`, `tipe`, `tanggal`, `nilai`, `nilai_2`, `tanggal_ditanggapi`) VALUES
-(9, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', '1.png', '21795', 'image/png', '2021-12-10 13:20:15', '90', '98', '2021-12-10 13:28:10'),
-(11, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', '1.jpg', '14260', 'image/jpeg', '2021-12-11 05:48:18', '', '', '2021-12-11 05:48:18'),
-(12, 'Muhamad Rafli Septian', 'Foto Gambar', 'Foto Bagus', '3.png', '101036', 'image/png', '2021-12-11 06:40:20', '', '', '2021-12-11 06:40:20');
+(17, 'Muhamad Qolbu', 'Lomba Fotografi', 'ini deskripsi', 'testkarya.png', '67495', 'image/png', '2021-12-11 06:58:47', '99', '88', '2021-12-11 06:59:39');
 
 -- --------------------------------------------------------
 
@@ -116,7 +114,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `nama`, `email`, `password`, `level`) VALUES
 (7, '2003018', 'Muhamad Rafli Septian', 'rafliseptiannn25@gmail.com', '$2y$10$BvZb0vM1Mau1YgvQwL7KXeYcMsLWGRRD0Ko6gRQWV6jkcNgmpS3KC', 'peserta'),
-(8, '2002018', 'Qolbu', 'aksara@gmail.com', '$2y$10$Cvqh0aNzEy5CQHAnQOEp5eltHaWZY/HXii5bWiZJQYi6hYF4LnONq', 'peserta');
+(8, '2002018', 'Qolbu', 'aksara@gmail.com', '$2y$10$Cvqh0aNzEy5CQHAnQOEp5eltHaWZY/HXii5bWiZJQYi6hYF4LnONq', 'peserta'),
+(9, '2003015', 'Asoy', 'tegargebleg@gmail.com', '$2y$10$aECvFfuFFlLo1J0iTGKs/OglovWOEkzN5GqY.F/.pQPuZRZT/5tWe', 'peserta'),
+(10, '2003001', 'Abad', 'abad@gmail.com', '$2y$10$A4gRHp4JCFDVhG8seVACFeIQnxL2m2e3f72kV9kOUYZBdahWCdPMy', 'peserta');
 
 --
 -- Indexes for dumped tables
@@ -160,7 +160,7 @@ ALTER TABLE `admin_juri`
 -- AUTO_INCREMENT untuk tabel `karya`
 --
 ALTER TABLE `karya`
-  MODIFY `id_karya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_karya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `konten`
@@ -172,7 +172,7 @@ ALTER TABLE `konten`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
